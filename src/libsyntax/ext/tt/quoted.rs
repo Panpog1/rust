@@ -479,7 +479,7 @@ where
                     Ok(Ok((op, op2_span))) if op == KleeneOp::ZeroOrOne => {
                         sess.span_diagnostic
                             .struct_span_err(op2_span, "expected `*` or `+`")
-                            .note("`?` is not a macro repetition operator")
+                            .note("`?` is not a macro repetition operator in the 2015 edition, but accepted in the 2018 edition")
                             .emit();
 
                         // Return a dummy
@@ -510,7 +510,7 @@ where
                 // `?` is not allowed as a Kleene op in 2015
                 sess.span_diagnostic
                     .struct_span_err(op1_span, "expected `*` or `+`")
-                    .note("`?` is not a macro repetition operator")
+                    .note("`?` is not a macro repetition operator in the 2015 edition, but accepted in the 2018 edition")
                     .emit();
 
                 // Return a dummy
@@ -524,7 +524,7 @@ where
             Ok(Ok((op, op2_span))) if op == KleeneOp::ZeroOrOne => {
                 sess.span_diagnostic
                     .struct_span_err(op2_span, "expected `*` or `+`")
-                    .note("`?` is not a macro repetition operator")
+                    .note("`?` is not a macro repetition operator in the 2015 edition, but accepted in the 2018 edition")
                     .emit();
 
                 // Return a dummy
